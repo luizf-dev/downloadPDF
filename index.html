@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="Pt-BR">
+    <head>
+        <title>Download de PDF</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <style>
+        button{
+            background-color: green;
+            width: 200px;
+            margin: 0 auto;
+            height: 40px;
+            border: none;
+            border-radius: 10px;
+            border: 1px solid black;
+            cursor: pointer;
+
+        }
+    </style>
+    <body>
+        <button onclick="alert('A tabela de valores será enviada para seu dispositivo, verifique seus downloads!')"  id="download">Solicitar tabela de preço</button>
+
+        
+        <script type="text/javascript">
+
+            // *botão de download do pdf
+            const btnDown = document.getElementById('download');
+            btnDown.addEventListener('click', () => {
+
+                // Cria um elemento <a> temporário para fazer o download
+                var downloadLink = document.createElement('a');
+                downloadLink.href = 'pdf/tabela_valores_GK_lash_designer.pdf'
+                downloadLink.download = 'tabela_valores_GK_lash_designer.pdf';
+
+                // Simula o clique no elemento <a> para iniciar o download
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+            });            
+
+        </script>
+    </body>
+</html>
